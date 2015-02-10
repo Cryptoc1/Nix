@@ -1,5 +1,5 @@
 # Veer
-Nix is a siderbar for implementing interactive plugins and widgets. These plugins act similarily to desktop widgets on Windows(TM), or iOS 8 NC Widgets.
+Veer is a siderbar for implementing interactive plugins and widgets. These plugins act similarily to desktop widgets on Windows(TM), or iOS 8 NC Widgets.
 
 ## Usage
 Veer is written in python, and can be ran using the python interpeter.
