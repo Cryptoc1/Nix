@@ -18,7 +18,7 @@ class sidebar(gtk.Window):
         
         self.set_size_request(20, self.get_vheight())
         self.resize(self.get_vwidth(), self.get_vheight())
-        self.move(self.screen.get_width() - self.get_vwidth(), 25)
+        self.move(self.screen.get_width() - self.get_vwidth(), 24)
 
         self.view = gtk.Table(rows=self.get_vwidth(), columns=1, homogeneous=False)
         self.add(self.view)
@@ -33,7 +33,7 @@ class sidebar(gtk.Window):
         cr = widget.window.cairo_create()
 
         cr.set_operator(cairo.OPERATOR_CLEAR)
-        cr.rectangle(0.0, 0.0, *widget.get_size())
+        cr.rectangle(0, 0, *widget.get_size())
         cr.fill()
         cr.set_operator(cairo.OPERATOR_OVER)
 
@@ -43,11 +43,11 @@ class sidebar(gtk.Window):
 
     def mouse_enter(self, widget, event):
         self.resize(self.get_vwidth(), self.get_vheight())
-        self.move(widget.screen.get_width() - self.get_vwidth(), 25)
+        self.move(widget.screen.get_width() - self.get_vwidth(), 24)
 
     def mouse_leave(self, widget, event):
         self.resize(20, self.get_vheight())
-        self.move(widget.screen.get_width() - 20, 25)
+        self.move(widget.screen.get_width() - 20, 24)
     
     def set_vwidth(self, w):
         self.vwidth = w
@@ -60,6 +60,9 @@ class sidebar(gtk.Window):
 
     def get_vheight(self):
         return self.vheight
+
+    def size_plugin(self, f):
+        f.set_size_request(self.get_vwidth(), self.get_vwidth())
 
     def update(self):
         self.show_all()
