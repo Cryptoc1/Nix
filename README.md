@@ -12,5 +12,5 @@ Nix is currently in very early active development, and has limited support, if a
  * gtk
  * cairo
 
-##### Creators & Contributors
+## Creators & Contributors
 This project was created by Samuel Steele (Cryptoc1) and there are currently no contributors.
