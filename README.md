@@ -1,5 +1,5 @@
 # Nix
-Nix is a siderbar for storing Nix Plugins. These plugins act similarily to desktop widgets.
+Nix is a siderbar for implementing interactive plugins and widgets. These plugins act similarily to desktop widgets on Windows(TM), or iOS 8 NC Widgets.
 
 ## Usage
 Nix is written in python, and can be ran using the python interpeter.

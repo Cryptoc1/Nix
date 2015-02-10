@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
-import pygtk
-pygtk.require('2.0')
+import pygtk; pygtk.require('2.0')
 import gtk, cairo
 
 class sidebar(gtk.Window):
@@ -16,9 +15,9 @@ class sidebar(gtk.Window):
 
         self.set_default_size(250, self.screen.get_height())
         self.set_size_request(250, self.screen.get_height())
-        self.set_resizable(False)
+        # self.set_resizable(False)
 
-        self.move(self.screen.get_width() - self.get_size()[0], 20)
+        self.move(self.screen.get_width() - 250, 20)
 
         self.connect('expose-event', self.expose)
         self.connect('enter-notify-event', self.mouse_enter)
@@ -38,25 +37,14 @@ class sidebar(gtk.Window):
         cr.rectangle(0,0, 250, widget.screen.get_height())
         cr.fill()
 
-        text = "Hello World!"
-
-        cr.select_font_face('Monospace', cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
-        cr.set_font_size(14)
-
-        cr.move_to(10, 24)
-        cr.set_source_rgba(1.0, 1.0, 1.0, 0.75)
-        cr.show_text(text)
-
     def mouse_enter(self, widget, event):
-        # self.move(self.screen.get_width() - self.get_size()[0], 20)
         self.set_size_request(250, self.screen.get_height())
         self.move(self.screen.get_width() - 250, 20)
 
     def mouse_leave(self, widget, event):
-        # self.move(self.screen.get_width() - 15, 20)
         self.set_size_request(20, self.screen.get_height())
         self.move(self.screen.get_width() - 20, 20)
-    
+
     def update(self):
         self.show_all()
 
