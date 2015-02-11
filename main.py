@@ -10,6 +10,8 @@ def load_plugins():
     for line in plugins.readlines():
         line = line.replace('\n', '')
         importlib.import_module(line)
+        Veer.TOP_ATTACH += 1
+        Veer.BOTTOM_ATTACH += 1
     plugins.close()
 
 def main():

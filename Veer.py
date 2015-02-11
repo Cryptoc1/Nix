@@ -67,6 +67,8 @@ class sidebar(gtk.Window):
     def update(self):
         self.show_all()
 
+TOP_ATTACH = 0
+BOTTOM_ATTACH = 1
 sidebar = sidebar()
 def main():
     gtk.main()
