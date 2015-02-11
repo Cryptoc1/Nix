@@ -9,7 +9,7 @@ import Veer
 
 # Plugins begin as Gtk Frames
 Frame = gtk.Frame()
-Frame.set_border_width(10)
+Frame.set_border_width(8)
 
 # Because this is going to be a simple notepad, we'll need textviews and buffers,
 # all of which are supplied by Gtk.
@@ -29,7 +29,7 @@ Veer.sidebar.size_plugin(Frame)
 Frame.add(output)
 
 # Attach the Plugin Frame to the Sidebar's 'view'.
-Veer.sidebar.view.attach(Frame, 0, 1, 0, 1, gtk.EXPAND, gtk.FILL, 1, 1)
+Veer.sidebar.view.attach(Frame, 0, 1, Veer.TOP_ATTACH, Veer.BOTTOM_ATTACH, gtk.EXPAND, gtk.FILL, 1, 1)
 
 # After attaching our plugin, we need to refresh the sidebars view.
 Veer.sidebar.update()

@@ -7,14 +7,17 @@ import gtk, cairo
 import Veer
 import time
 
+# Defines the Clock Class we'll be using.
 class Clock:
     def __init__(self):
         Frame = gtk.Frame()
         self.label = gtk.Label()
         Frame.add(self.label)
         Frame.set_border_width(10)
+
+        # Size and attach the Plugin to the sidebar view
         Veer.sidebar.size_plugin(Frame)
-        Veer.sidebar.view.attach(Frame, 1, 2, 1, 2, gtk.EXPAND, gtk.FILL, 1, 1)
+        Veer.sidebar.view.attach(Frame, 0, 1, Veer.TOP_ATTACH, Veer.BOTTOM_ATTACH, gtk.EXPAND, gtk.FILL, 1, 1)
 
     def update(self):
         hour = int(time.strftime("%H"))
@@ -25,6 +28,8 @@ class Clock:
 
 clock = Clock()
 
+# This keeps the updating, or 'ticking', of the clock in-sync with the Gtk loop
 gtk.timeout_add(200, clock.update)
 
+# Update the view, as always.
 Veer.sidebar.update()
